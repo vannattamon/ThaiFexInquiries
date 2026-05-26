@@ -7,407 +7,143 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --gold: #C4933F;
-  --gold-light: #E8C87A;
-  --gold-pale: #F9F1E1;
-  --dark: #1A1410;
-  --mid: #4A3F35;
-  --muted: #8C7B6B;
-  --line: rgba(196,147,63,0.2);
-  --bg: #FDFAF5;
-  --white: #FFFFFF;
+  --gold: #C4933F; --gold-light: #E8C87A; --gold-pale: #F9F1E1;
+  --dark: #1A1410; --mid: #4A3F35; --muted: #8C7B6B;
+  --line: rgba(196,147,63,0.2); --bg: #FDFAF5; --white: #FFFFFF;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  color: var(--dark);
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(196,147,63,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 10% 90%, rgba(196,147,63,0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.page {
-  position: relative;
-  z-index: 1;
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 60px 24px 80px;
-}
-
-/* Header */
-.header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 28px;
-}
-
-.brand-line {
-  width: 40px;
-  height: 1px;
-  background: var(--gold);
-}
-
-.brand-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-}
-
-.header h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 6vw, 48px);
-  font-weight: 500;
-  color: var(--dark);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 12px;
-}
-
-.header h1 span {
-  color: var(--gold);
-}
-
-.header p {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--muted);
-  letter-spacing: 0.04em;
-  line-height: 1.7;
-  max-width: 440px;
-  margin: 0 auto;
-}
-
-/* Divider */
-.divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 40px 0;
-}
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--dark); min-height: 100vh; position: relative; overflow-x: hidden; }
+body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 60% 40% at 80% 10%, rgba(196,147,63,0.07) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 10% 90%, rgba(196,147,63,0.05) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+.page { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 60px 24px 80px; }
+.header { text-align: center; margin-bottom: 56px; }
+.brand-mark { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.brand-line { width: 40px; height: 1px; background: var(--gold); }
+.brand-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+.header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 6vw, 48px); font-weight: 500; color: var(--dark); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px; }
+.header h1 span { color: var(--gold); }
+.header p { font-size: 14px; font-weight: 300; color: var(--muted); letter-spacing: 0.04em; line-height: 1.7; max-width: 440px; margin: 0 auto; }
+.divider { display: flex; align-items: center; gap: 16px; margin: 40px 0; }
 .divider-line { flex: 1; height: 1px; background: var(--line); }
-.divider-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  color: var(--gold);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* Form sections */
-.section {
-  margin-bottom: 40px;
-}
-
-.section-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--line);
-}
-
-.field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
+.divider-text { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+.section { margin-bottom: 40px; }
+.section-label { font-family: 'Cormorant Garamond', serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 520px) { .field-row { grid-template-columns: 1fr; } }
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
 .field.full { grid-column: 1 / -1; }
-
-label {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
+label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 label .req { color: var(--gold); margin-left: 2px; }
-
-input, select, textarea {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--dark);
-  background: var(--white);
-  border: 1px solid rgba(196,147,63,0.25);
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  outline: none;
-  width: 100%;
-}
-
+input, select, textarea { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 400; color: var(--dark); background: var(--white); border: 1px solid rgba(196,147,63,0.25); border-radius: 4px; padding: 12px 16px; transition: border-color 0.2s, box-shadow 0.2s; outline: none; width: 100%; }
 input::placeholder, textarea::placeholder { color: #C4B5A5; }
-
-input:focus, select:focus, textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(196,147,63,0.1);
-}
-
+input:focus, select:focus, textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(196,147,63,0.1); }
 select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C4933F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
-
 textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
-
-/* Checkbox group */
-.check-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
+.check-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 @media (max-width: 420px) { .check-group { grid-template-columns: 1fr; } }
-
-.check-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border: 1px solid rgba(196,147,63,0.2);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
-  font-size: 13px;
-  color: var(--mid);
-  user-select: none;
-}
-
+.check-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid rgba(196,147,63,0.2); border-radius: 4px; cursor: pointer; transition: background 0.15s, border-color 0.15s; font-size: 13px; color: var(--mid); user-select: none; }
 .check-item:hover { background: var(--gold-pale); border-color: var(--gold); }
 .check-item input[type="checkbox"] { display: none; }
-.check-item .box {
-  width: 16px; height: 16px;
-  border: 1px solid rgba(196,147,63,0.4);
-  border-radius: 3px;
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.15s;
-}
-.check-item input:checked ~ .box {
-  background: var(--gold);
-  border-color: var(--gold);
-}
-.check-item input:checked ~ .box::after {
-  content: '';
-  width: 8px; height: 5px;
-  border-left: 1.5px solid white;
-  border-bottom: 1.5px solid white;
-  transform: rotate(-45deg) translateY(-1px);
-  display: block;
-}
+.check-item .box { width: 16px; height: 16px; border: 1px solid rgba(196,147,63,0.4); border-radius: 3px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+.check-item input:checked ~ .box { background: var(--gold); border-color: var(--gold); }
+.check-item input:checked ~ .box::after { content: ''; width: 8px; height: 5px; border-left: 1.5px solid white; border-bottom: 1.5px solid white; transform: rotate(-45deg) translateY(-1px); display: block; }
 .check-item input:checked ~ span { color: var(--dark); font-weight: 500; }
+.volume-opts { display: flex; gap: 10px; flex-wrap: wrap; }
+.vol-btn { padding: 9px 18px; border: 1px solid rgba(196,147,63,0.3); border-radius: 100px; font-size: 13px; color: var(--mid); background: transparent; cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+.vol-btn:hover, .vol-btn.active { background: var(--gold); border-color: var(--gold); color: white; font-weight: 500; }
 
-/* Volume selector */
-.volume-opts {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+/* Card scan */
+.scan-box { border: 1.5px dashed rgba(196,147,63,0.4); border-radius: 8px; padding: 20px; text-align: center; background: var(--gold-pale); margin-bottom: 24px; cursor: pointer; transition: border-color 0.2s; }
+.scan-box:hover { border-color: var(--gold); }
+.scan-box input[type=file] { display: none; }
+.scan-icon { font-size: 28px; margin-bottom: 8px; }
+.scan-title { font-size: 14px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+.scan-sub { font-size: 12px; color: var(--muted); }
+.scan-status { margin-top: 10px; font-size: 13px; color: var(--gold); font-weight: 500; display: none; }
+.scanning-anim { display: none; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; font-size: 13px; color: var(--gold); }
+.dot-pulse { display: flex; gap: 4px; }
+.dot-pulse span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 1.2s infinite; }
+.dot-pulse span:nth-child(2) { animation-delay: 0.2s; }
+.dot-pulse span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pulse { 0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); } 40% { opacity: 1; transform: scale(1); } }
 
-.vol-btn {
-  padding: 9px 18px;
-  border: 1px solid rgba(196,147,63,0.3);
-  border-radius: 100px;
-  font-size: 13px;
-  color: var(--mid);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.15s;
-  font-family: 'DM Sans', sans-serif;
-}
-
-.vol-btn:hover, .vol-btn.active {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: white;
-  font-weight: 500;
-}
-
-/* Submit */
-.submit-wrap {
-  margin-top: 48px;
-  text-align: center;
-}
-
-.submit-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--dark);
-  color: white;
-  border: none;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 16px 48px;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-  position: relative;
-  overflow: hidden;
-}
-
-.submit-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
+.submit-wrap { margin-top: 48px; text-align: center; }
+.submit-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--dark); color: white; border: none; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 48px; border-radius: 2px; cursor: pointer; transition: background 0.2s, transform 0.15s; position: relative; overflow: hidden; }
+.submit-btn::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
 .submit-btn:hover::before { transform: scaleX(1); }
 .submit-btn:hover { transform: translateY(-1px); }
 .submit-btn span, .submit-btn svg { position: relative; z-index: 1; }
-
-.submit-note {
-  margin-top: 14px;
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 0.03em;
-}
-
-/* Success state */
-.success-screen {
-  display: none;
-  text-align: center;
-  padding: 60px 24px;
-}
-
+.submit-note { margin-top: 14px; font-size: 12px; color: var(--muted); letter-spacing: 0.03em; }
+.success-screen { display: none; text-align: center; padding: 60px 24px; }
 .success-screen.show { display: block; }
-
-.success-icon {
-  width: 64px;
-  height: 64px;
-  border: 1.5px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-}
-
-.success-screen h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-.success-screen p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  margin-top: 60px;
-  padding-top: 32px;
-  border-top: 1px solid var(--line);
-}
-
-.footer p {
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 0.04em;
-}
-
-.footer strong {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  color: var(--gold);
-  font-weight: 500;
-  display: block;
-  margin-bottom: 6px;
-}
+.success-icon { width: 64px; height: 64px; border: 1.5px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+.success-screen h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; margin-bottom: 12px; }
+.success-screen p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.footer { text-align: center; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--line); }
+.footer p { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+.footer strong { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--gold); font-weight: 500; display: block; margin-bottom: 6px; }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- Header -->
   <div class="header">
     <div class="brand-mark">
-      <div class="brand-line"></div>
-      <div class="brand-dot"></div>
-      <div class="brand-line"></div>
+      <div class="brand-line"></div><div class="brand-dot"></div><div class="brand-line"></div>
     </div>
     <h1>Business <span>Inquiry</span><br>& Contract Request</h1>
-    <p>We'd love to partner with you. Please fill in the details below and our sales team will reach out within 1–2 business days.</p>
+    <p>We'd love to partner with you. Fill in any details below and our sales team will reach out within 1–2 business days.</p>
   </div>
 
-  <!-- Form -->
   <form id="inquiryForm">
+
+    <!-- Card Scanner -->
+    <div class="section">
+      <div class="section-label">Quick Fill — Scan Business Card</div>
+      <div class="scan-box" onclick="document.getElementById('cardInput').click()">
+        <input type="file" id="cardInput" accept="image/*" capture="environment" onchange="scanCard(this)">
+        <div class="scan-icon">📷</div>
+        <div class="scan-title">Take a photo of your business card</div>
+        <div class="scan-sub">AI will auto-fill your information</div>
+        <div class="scanning-anim" id="scanningAnim">
+          <div class="dot-pulse"><span></span><span></span><span></span></div>
+          Reading card...
+        </div>
+        <div class="scan-status" id="scanStatus"></div>
+      </div>
+    </div>
 
     <!-- Company Info -->
     <div class="section">
       <div class="section-label">Company Information</div>
       <div class="field-row">
         <div class="field">
-          <label>Company / Store Name <span class="req">*</span></label>
-          <input type="text" placeholder="e.g. Fresh Market Co., Ltd." required />
+          <label>Company / Store Name</label>
+          <input type="text" id="f-company" placeholder="e.g. Fresh Market Co., Ltd." />
         </div>
         <div class="field">
           <label>Contact Person <span class="req">*</span></label>
-          <input type="text" placeholder="Full name" required />
+          <input type="text" id="f-contact" placeholder="Full name" required />
         </div>
         <div class="field">
-          <label>Phone Number <span class="req">*</span></label>
-          <input type="tel" placeholder="e.g. 081-234-5678" required />
+          <label>Position / Title</label>
+          <input type="text" id="f-position" placeholder="e.g. Purchasing Manager" />
         </div>
         <div class="field">
-          <label>Email Address <span class="req">*</span></label>
-          <input type="email" placeholder="your@email.com" required />
+          <label>Phone Number</label>
+          <input type="tel" id="f-phone" placeholder="e.g. 081-234-5678" />
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" id="f-email" placeholder="your@email.com" />
+        </div>
+        <div class="field">
+          <label>LINE ID</label>
+          <input type="text" id="f-line" placeholder="e.g. @yourlineid" />
         </div>
         <div class="field full">
           <label>Delivery Address</label>
-          <input type="text" placeholder="Street, district, province, postal code" />
+          <input type="text" id="f-address" placeholder="Street, district, province, postal code" />
         </div>
       </div>
     </div>
@@ -418,29 +154,16 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
       <div class="divider-line"></div>
     </div>
 
-    <!-- Product Interest -->
     <div class="section">
       <div class="section-label">Products & Requirements</div>
 
       <div class="field">
-        <label>Interested Product Categories <span class="req">*</span></label>
-        <div class="check-group">
-          <label class="check-item">
-            <input type="checkbox" /><span class="box"></span>
-            <span>Seafood Snack (Retail)</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" /><span class="box"></span>
-            <span>OEM / Private Label</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" /><span class="box"></span>
-            <span>Frozen Seafood (Export)</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" /><span class="box"></span>
-            <span>Other / Not sure yet</span>
-          </label>
+        <label>Interested Product Categories</label>
+        <div class="check-group" id="products-group">
+          <label class="check-item"><input type="checkbox" /><span class="box"></span><span>Seafood Snack (Retail)</span></label>
+          <label class="check-item"><input type="checkbox" /><span class="box"></span><span>OEM / Private Label</span></label>
+          <label class="check-item"><input type="checkbox" /><span class="box"></span><span>Frozen Seafood (Export)</span></label>
+          <label class="check-item"><input type="checkbox" /><span class="box"></span><span>Other / Not sure yet</span></label>
         </div>
       </div>
 
@@ -457,29 +180,17 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 
       <div class="field" style="margin-top:20px;">
         <label>Sales Channel</label>
-        <div class="check-group">
-          <label class="check-item">
-            <input type="checkbox" /><span class="box"></span>
-            <span>Online (Shopee / Lazada / TikTok)</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" /><span class="box"></span>
-            <span>Physical Store</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" /><span class="box"></span>
-            <span>Distributor / Wholesale</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" /><span class="box"></span>
-            <span>Export</span>
-          </label>
+        <div class="check-group" id="channels-group">
+          <label class="check-item"><input type="checkbox" /><span class="box"></span><span>Online (Shopee / Lazada / TikTok)</span></label>
+          <label class="check-item"><input type="checkbox" /><span class="box"></span><span>Physical Store</span></label>
+          <label class="check-item"><input type="checkbox" /><span class="box"></span><span>Distributor / Wholesale</span></label>
+          <label class="check-item"><input type="checkbox" /><span class="box"></span><span>Export</span></label>
         </div>
       </div>
 
       <div class="field" style="margin-top:20px;">
         <label>How did you hear about us?</label>
-        <select>
+        <select id="f-source">
           <option value="" disabled selected>Please select</option>
           <option>TikTok</option>
           <option>Facebook</option>
@@ -497,16 +208,14 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
       <div class="divider-line"></div>
     </div>
 
-    <!-- Additional -->
     <div class="section">
       <div class="section-label">Message & Special Requirements</div>
       <div class="field">
         <label>Tell us more about your needs</label>
-        <textarea placeholder="e.g. packaging preferences, product specifications, delivery schedule, or any questions you have..."></textarea>
+        <textarea id="f-message" placeholder="e.g. packaging preferences, product specifications, delivery schedule, or any questions you have..."></textarea>
       </div>
     </div>
 
-    <!-- Submit -->
     <div class="submit-wrap">
       <button type="submit" class="submit-btn">
         <span>Submit Inquiry</span>
@@ -519,7 +228,6 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 
   </form>
 
-  <!-- Success -->
   <div class="success-screen" id="successScreen">
     <div class="success-icon">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -530,7 +238,6 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
     <p>Your inquiry has been received.<br>Our sales team will contact you within 1–2 business days.</p>
   </div>
 
-  <!-- Footer -->
   <div class="footer">
     <strong>MaeIce Mahachai — Thai Royal Coconut Co., Ltd.</strong>
     <p>066-137-9999 &nbsp;·&nbsp; matus.j@thairoyalcoconut.com &nbsp;·&nbsp; www.maeicemahachai.com</p>
@@ -539,16 +246,113 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 </div>
 
 <script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwDqGMjvmxjcswS_gt4weLO4hSuUEQJVOgUO5gLVzRyj7WZS7WaDaUauI7WxnxACocH/exec';
+
 function selectVol(btn) {
   document.querySelectorAll('.vol-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
 
-document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+async function scanCard(input) {
+  if (!input.files[0]) return;
+  const file = input.files[0];
+  const anim = document.getElementById('scanningAnim');
+  const status = document.getElementById('scanStatus');
+  anim.style.display = 'flex';
+  status.style.display = 'none';
+
+  try {
+    const base64 = await new Promise((res, rej) => {
+      const r = new FileReader();
+      r.onload = () => res(r.result.split(',')[1]);
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 500,
+        messages: [{
+          role: 'user',
+          content: [
+            { type: 'image', source: { type: 'base64', media_type: file.type || 'image/jpeg', data: base64 } },
+            { type: 'text', text: 'Extract info from this business card. Return ONLY valid JSON with these keys: company, contact, position, phone, email, line, address. Use empty string if not found. No markdown, no explanation.' }
+          ]
+        }]
+      })
+    });
+
+    const data = await resp.json();
+    const text = data.content?.[0]?.text || '{}';
+    const info = JSON.parse(text.replace(/```json|```/g, '').trim());
+
+    if (info.company)   document.getElementById('f-company').value   = info.company;
+    if (info.contact)   document.getElementById('f-contact').value   = info.contact;
+    if (info.position)  document.getElementById('f-position').value  = info.position;
+    if (info.phone)     document.getElementById('f-phone').value     = info.phone;
+    if (info.email)     document.getElementById('f-email').value     = info.email;
+    if (info.line)      document.getElementById('f-line').value      = info.line;
+    if (info.address)   document.getElementById('f-address').value   = info.address;
+
+    anim.style.display = 'none';
+    status.style.display = 'block';
+    status.textContent = '✓ Card scanned successfully — please review the info below';
+    status.style.color = '#27AE60';
+
+  } catch(err) {
+    anim.style.display = 'none';
+    status.style.display = 'block';
+    status.textContent = 'Could not read card. Please fill in manually.';
+    status.style.color = '#C0392B';
+  }
+}
+
+document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  this.style.display = 'none';
-  document.getElementById('successScreen').classList.add('show');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const contact = document.getElementById('f-contact').value.trim();
+  if (!contact) { alert('Please enter at least a contact name.'); return; }
+
+  const submitBtn = this.querySelector('.submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.querySelector('span').textContent = 'Sending...';
+
+  const products = [...document.querySelectorAll('#products-group input:checked')]
+    .map(cb => cb.closest('.check-item').querySelector('span:last-child').textContent).join(', ');
+  const channels = [...document.querySelectorAll('#channels-group input:checked')]
+    .map(cb => cb.closest('.check-item').querySelector('span:last-child').textContent).join(', ');
+  const volume = document.querySelector('.vol-btn.active')?.textContent || '';
+  const source = document.getElementById('f-source').value;
+
+  const payload = {
+    company:  document.getElementById('f-company').value,
+    contact:  document.getElementById('f-contact').value,
+    position: document.getElementById('f-position').value,
+    phone:    document.getElementById('f-phone').value,
+    email:    document.getElementById('f-email').value,
+    line:     document.getElementById('f-line').value,
+    address:  document.getElementById('f-address').value,
+    products, volume,
+    channel: channels + (source ? ' | Source: ' + source : ''),
+    message: document.getElementById('f-message').value
+  };
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    this.style.display = 'none';
+    document.getElementById('successScreen').classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch(err) {
+    submitBtn.disabled = false;
+    submitBtn.querySelector('span').textContent = 'Submit Inquiry';
+    alert('Something went wrong. Please try again.');
+  }
 });
 </script>
 </body>
